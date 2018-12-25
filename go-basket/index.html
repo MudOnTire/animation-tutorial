@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Basket Example</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="basket">
+  <header>
+    <h1>Sports Clothing</h1>
+    <div class="basket-icon">
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/ef240c9904f3010500ff.png">
+    </div>
+  </header>
+  <ul class="products">
+    <li>
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/3caf7a28dd8c4782066a.jpg">
+      <h2>Green T-Shirt</h2>
+      <button>Add to Basket</button>
+    </li>
+    <li>
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/93cb51a3bb7cf6227eb5.jpg">
+      <h2>Yellow T-Shirt</h2>
+      <button>Add to Basket</button>
+    </li>
+    <li>
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/9e1662b3706af6675632.jpg">
+      <h2>Pink T-Shirt</h2>
+      <button>Add to Basket</button>
+    </li>
+    <li>
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/3caf7a28dd8c4782066a.jpg">
+      <h2>Green T-Shirt</h2>
+      <button>Add to Basket</button>
+    </li>
+    <li>
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/93cb51a3bb7cf6227eb5.jpg">
+      <h2>Yellow T-Shirt</h2>
+      <button>Add to Basket</button>
+    </li>
+    <li>
+      <img src="http://lc-jOYHMCEn.cn-n1.lcfile.com/9e1662b3706af6675632.jpg">
+      <h2>Pink T-Shirt</h2>
+      <button>Add to Basket</button>
+    </li>
+  </ul>
+  <script>
+    $("button").on("click", function () {
+      var $btn = $(this);
+      var $li = $btn.closest('li');
+      var btnOffsetTop = $btn.offset().top;
+      var btnOffsetRight = window.innerWidth - $btn.offset().left;
+      $li.find('img')
+        .clone()
+        .css({ top: btnOffsetTop, right: btnOffsetRight })
+        .addClass("zoom")
+        .appendTo($li);
+
+      setTimeout(function () {
+        $(".zoom").remove();
+      }, 1000);
+    });
+  </script>
+</body>

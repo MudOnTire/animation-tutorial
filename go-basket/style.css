@@ -1,0 +1,59 @@
+header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+header:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.basket ul {
+  padding: 0;
+  margin-top: 40px;
+}
+
+.basket li {
+  display: inline-block;
+  list-style-type: none;
+  width: 30%;
+  margin: 30px 1.5%;
+  text-align: center;
+}
+
+.basket button {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.basket header div {
+  float: right;
+  position: relative;
+  z-index: 1;
+}
+
+.basket header h1 {
+  float: left;
+}
+
+/* animation */
+
+.zoom {
+  position: absolute;
+  width: 40px;
+  opacity: 0;
+  animation: zoom 1s linear forwards;
+}
+
+@keyframes zoom {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    top: 40px;
+    right: 40px;
+  }
+}
