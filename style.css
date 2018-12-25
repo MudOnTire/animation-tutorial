@@ -1,0 +1,36 @@
+body{
+	background: skyblue;
+	text-align: center;
+}
+
+.wrapper{
+    width: 100%;
+    padding: 20px;
+	box-sizing: border-box;
+}
+
+.cloud{
+	width: 240px;
+	transition: transform 2s ease-in;
+}
+
+.cloud:hover{
+	transform: rotate(1080deg);
+}
+
+.circle{
+	width: 100px;
+	padding: 50px 0;
+	line-height: 0;
+	margin: 60px auto;
+	background: pink;
+	color: white;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: background-color 1s;
+}
+
+.circle:hover{
+	background-color: salmon;
+	transform: rotate(180deg);
+}

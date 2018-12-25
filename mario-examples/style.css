@@ -1,0 +1,130 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+.sky{
+  height: 25%;
+  background: skyblue;
+}
+
+.grass{
+  height: 25%;
+  background: seagreen;
+}
+
+.road{
+  height: 50%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines{
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 48%;
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+.mario{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 60px;
+}
+
+.mario img{
+  max-width: 100%;
+}
+
+.luigi{
+  position: absolute;
+  bottom: 60px;
+  left: 0px;
+  width: 60px;
+  animation-direction: reverse;
+}
+
+.animated{
+  animation-name: driveReverse;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+.animated::before{
+  color: gold;
+  top: 40px;
+  position: relative;
+  right: 80px;
+  text-align: center;
+  display: block;
+  width: 100px;
+}
+
+.ease{
+  animation-timing-function: ease;
+  bottom: 160px;
+}
+
+.ease::before{
+  content: 'ease';
+}
+
+.ease-in{
+  animation-timing-function: ease-in;
+  bottom: 120px;
+}
+
+.ease-in::before{
+  content: 'ease-in';
+}
+
+.ease-out{
+  /* animation-timing-function: ease-out; */
+  animation-timing-function: cubic-bezier(1,.03,1,-0.03);
+  /* bottom: 80px; */
+  bottom: 16px;
+}
+
+.ease-out::before{
+  /* content: 'ease-out'; */
+}
+
+.ease-in-out{
+  animation-timing-function: ease-in-out;
+  bottom: 40px;
+}
+
+.ease-in-out::before{
+  content: "ease-in-out";
+}
+
+.linear{
+  /* animation-timing-function: linear; */
+  animation-timing-function: cubic-bezier(1,.03,1,-0.03);
+  bottom: 0px;
+}
+
+.linear::before{
+  content: 'linear';
+}
+
+@keyframes driveReverse {
+  from{ transform: translateX(80px) }
+  to{ transform: translateX(1300px) }
+}
